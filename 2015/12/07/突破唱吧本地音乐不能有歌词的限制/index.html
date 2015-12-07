@@ -18,7 +18,7 @@
 
 
 
-  <meta name="keywords" content="Hexo," />
+  <meta name="keywords" content="Hexo,next" />
 
 
 
@@ -29,7 +29,7 @@
 
 
 
-  <title> Hexo在侧边栏增加个人简介的方法 // Chuck's Simple Blog </title>
+  <title> 突破唱吧本地音乐不能有歌词的限制 // Chuck's Simple Blog </title>
 </head>
 
 <body>
@@ -108,7 +108,7 @@
           
           
             
-              Hexo在侧边栏增加个人简介的方法
+              突破唱吧本地音乐不能有歌词的限制
             
           
         </h1>
@@ -116,7 +116,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          发表于 2015-05-03
+          发表于 2015-12-07
         </span>
 
         
@@ -136,8 +136,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/05/03/Hexo在侧边栏增加个人简介的方法/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/05/03/Hexo在侧边栏增加个人简介的方法/"></span>
+            <a href="/2015/12/07/突破唱吧本地音乐不能有歌词的限制/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/07/突破唱吧本地音乐不能有歌词的限制/"></span>
             </a>
           </span>
           
@@ -151,37 +151,32 @@
       
 
       
-        <p>和上一篇文章类似，实际上，Hexo是没有提供这项功能的，或者说我使用的这款皮肤没有，但是我们可以手动对它进行添加，打开目录下的<code>themes/你的主题/layout/_macro/sidebar.swig</code>,我们可以看见一些标签混杂着大括号及代码，不过没关系，这里不需要会 swig 的语法，打开你的博客，查看源代码，找到sidebar部分，在你觉得恰当的位置，插入<br><a id="more"></a><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">p</span> <span class="attribute">style</span>=<span class="value">"text-align: left;"</span>&gt;</span>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;前端工程师一枚，目前是大二在校生，拥抱WEB，且学且行。喜欢音乐与制作有趣的网页，喜欢尝鲜，愿能给世间留下一点不一样的色彩。<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">p</span> <span class="attribute">style</span>=<span class="value">"text-align: left;"</span> &gt;</span>生活博客: <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"http://Chuck.club"</span>&gt;</span>Chuck.club<span class="tag">&lt;/<span class="title">a</span>&gt;</span> <span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<p>关于插入代码的解释：不去改动CSS代码，只在局部生效，不干扰全局，减少耦合性。</p>
-</blockquote>
-<p>我的建议是在<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"site-state-item site-state-tags"</span>&gt;</span></span><br><span class="line">  &#123;% if theme.menu.tags %&#125;<span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"&#123;&#123; url_for(theme.menu.tags) &#125;&#125;"</span>&gt;</span>&#123;% endif %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"site-state-item-count"</span>&gt;</span>&#123;&#123; site.tags.length &#125;&#125;<span class="tag">&lt;/<span class="title">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"site-state-item-name"</span>&gt;</span>&#123;&#123; __('state.tags') &#125;&#125;<span class="tag">&lt;/<span class="title">span</span>&gt;</span></span><br><span class="line">    &#123;% if theme.menu.tags %&#125;<span class="tag">&lt;/<span class="title">a</span>&gt;</span>&#123;% endif %&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>后添加，也就是在3个统计之后添加说明。</p>
-<p>具体效果可以见本站的侧边栏。</p>
+        <h3 id="1-_发现过程">1. 发现过程</h3><p> 最近研究了下唱吧导入本地音乐的功能,一开始我采取的是先制作好音乐，然后通过使用本地伴奏，再静音人声的方式来上传可以加特技的歌，无奈本地音乐不能使用歌词，官网的上传通道又因为某些原因被关闭了。</p>
+<p>之后我尝试将生成的人声通过虚拟声卡重新导入到麦克风口，利用安卓模拟器里的唱吧来演唱，但是模拟器的声音不理想，似乎是引擎压缩了声音，怎样都会有有杂音</p>
+<p>之后又尝试使用音频线，可惜手机不能将音频线识别为麦克风，只能识别为耳机，所以走这种办法的话还需要购置一条手机音频一分二的线。</p>
+<p>最后突然灵机一动，想起了修改手机qq个人页面介绍音频突破60秒的限制的方法，就是通过替换临时文件的方法来破解限制。</p>
+<p>于是开始寻找文件，百度一番本地音乐的位置，找到之后进行对应格式的替换，上传之后成功拥有音乐歌词。</p>
+<h3 id="2-_具体方法">2. 具体方法</h3><ol>
+<li>首先将你制作好的音乐转为acc格式，可以用格式工厂转换。</li>
+<li>将音乐传入手机</li>
+<li>试听本地音乐文件夹(sdcard/.ktv/record[<strong>注意是隐藏文件夹.ktv,可能需要比如ex文件浏览器才能看得到</strong>])里的acc文件，确认是哪个文件，重命名自己转换好的acc文件替换对应文件<br><img src="http://i5.tietuku.com/f99e0cc865f6e294.png" alt="Chuck"><br>4.在唱吧中按分享上传。<br><img src="http://i5.tietuku.com/7c1420e2a6366961.png" alt="Chuck"></li>
+</ol>
 
       
     </div>
 
     <div class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Hexo/"> #Hexo </a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/12/07/突破唱吧本地音乐不能有歌词的限制/">突破唱吧本地音乐不能有歌词的限制</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/05/03/Hexo增加友情链接的方法/">Hexo增加友情链接的方法</a>
+              <a href="/2015/05/03/Hexo在侧边栏增加个人简介的方法/">Hexo在侧边栏增加个人简介的方法</a>
             
           </div>
         </div>
@@ -197,8 +192,8 @@
     
       <div class="comments" id="comments">
         
-          <div class="ds-thread" data-thread-key="2015/05/03/Hexo在侧边栏增加个人简介的方法/"
-               data-title="Hexo在侧边栏增加个人简介的方法" data-url="http://yoursite.com/2015/05/03/Hexo在侧边栏增加个人简介的方法/">
+          <div class="ds-thread" data-thread-key="2015/12/07/突破唱吧本地音乐不能有歌词的限制/"
+               data-title="突破唱吧本地音乐不能有歌词的限制" data-url="http://yoursite.com/2015/12/07/突破唱吧本地音乐不能有歌词的限制/">
           </div>
         
       </div>
@@ -283,7 +278,7 @@
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-_发现过程"><span class="nav-number">1.</span> <span class="nav-text">1. 发现过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-_具体方法"><span class="nav-number">2.</span> <span class="nav-text">2. 具体方法</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
